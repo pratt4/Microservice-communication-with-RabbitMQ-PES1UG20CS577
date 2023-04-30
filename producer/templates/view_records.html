@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Management Using Rabbit MQ</title>
+  <style>
+		.container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		table {
+		  width: 100%;
+		  border-collapse: collapse;
+		  margin: 20px 0;
+		}
+
+		thead {
+		  background-color: #333;
+		  color: #fff;
+		}
+
+		th, td {
+		  padding: 10px;
+		  text-align: center;
+		}
+
+		th {
+		  text-transform: uppercase;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #f2f2f2;
+		}
+
+		tr:hover {
+		  background-color: #ddd;
+		}
+
+		td:nth-child(1) {
+		  font-weight: bold;
+		}
+
+		td:nth-child(2) {
+		  text-transform: uppercase;
+		}
+
+		td:nth-child(3) {
+		  font-style: italic;
+		}
+
+		/* Optional: add a border around the table */
+		table {
+		  border: 1px solid #ccc;
+		  border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+
+	
+	<table border="1">
+        <thead>
+            <tr>
+                {% for col in colnames %}
+                <th> {{ col }} </th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                {% for item in record %}
+                <td>{{ item }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

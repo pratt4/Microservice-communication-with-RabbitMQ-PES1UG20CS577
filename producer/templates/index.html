@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Student Management System</title>
+		<style>
+		html, body {
+			height: 100%;
+						  }
+		  
+		  body {
+			  
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			/* background-color: #f4f4f4; */
+			  background: linear-gradient(120deg, #ddf4fb 0%, #b8d9eb 100%);
+			margin: 0;
+			padding: 0;
+		  }
+		  
+		  h1, h2 {
+			color: #555;
+			margin-top: 30px;
+			margin-bottom: 20px;
+			text-align: center;
+		  }
+		  
+		  form {
+			/* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTHmoP367n-0CjFufacClMOS_0ZSP5bwFTPBc7sjHJ1YoYcuXq9T8ye1WgVNHP85t3CeE&usqp=CAU"); */
+			  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			border-radius: 10px;
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+			display: flex;
+			flex-direction: column;
+			margin: 40px auto;
+			max-width: 500px;
+			padding: 40px;
+		  }
+		  
+		  label {
+			display: block;
+			margin-bottom: 5px;
+			color: #555;
+			font-weight: bold;
+		  }
+		  
+		  input[type="text"] {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			border: none;
+			border-bottom: 2px solid #ccc;
+			margin-bottom: 20px;
+			font-size: 16px;
+			background-color: transparent;
+		  }
+		  
+		  input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+			transition: background-color 0.3s ease-in-out;
+		  }
+		  
+		  input[type="submit"]:hover {
+			background-color: #2E8B57;
+			transition: background-color 0.3s ease-in-out;
+		  }
+		  
+		  input[type="submit"]:focus {
+			outline: none;
+		  }
+		  
+		  input[type="submit"]:active {
+			background-color: #145A32;
+			transition: background-color 0.3s ease-in-out;
+		  }
+		  
+		  /* New styles for the form */
+		  form h2 {
+			color: #4CAF50;
+			font-size: 28px;
+			margin-top: 40px;
+		  }
+		  
+		  form label.error {
+			color: #ff0000;
+			font-size: 14px;
+			margin-top: 10px;
+		  }
+		  
+		  form input[type="text"]:hover, form input[type="text"]:focus {
+			border-bottom: 2px solid #4CAF50;
+		  }
+		  
+		  form input[type="submit"] {
+			display: block;
+			margin: 20px auto 0;
+			transition: transform 0.3s ease-in-out;
+		  }
+		  
+		  form input[type="submit"]:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+			transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+		  }
+				  </style>
+	</head>
+<body>
+	<h1>Student Management System</h1>
+	<h2>Add New Student</h2>
+	<form method="GET" action="http://localhost:5000/insert_record">
+		<label for="name">Name:</label><br>
+		<input type="text" id="name" name="name" required><br>
+		<label for="srn">SRN:</label><br>
+		<input type="text" id="srn" name="srn" required><br>
+		<label for="section">Section:</label><br>
+		<input type="text" id="section" name="section" required><br>
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+	<h2>Delete Student</h2>
+	<form method="GET" action="http://localhost:5000/delete_record">
+		<label for="srn">SRN:</label><br>
+		<input type="text" id="srn" name="srn" required><br>
+		<br>
+		<input type="submit" value="Delete">
+	</form>
+	<h2>View All Students</h2>
+	<form method="GET" action="http://localhost:5000/read_data">
+		<input type="submit" value="View All Students">
+	</form>
+    <h2>Check health of connection</h2>
+	<form method="GET" action="http://localhost:5000/health_check">
+        <input type="text" id="message" name="message" required><br>
+		<input type="submit" value="Check health">
+	</form>
+</body>
+</html>
